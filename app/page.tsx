@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react";
+import Link from "next/link";
 
 
 type TodoList = {
@@ -27,10 +28,8 @@ export default function Home() {
     fname: "", 
     lname: ""
   })
-
   const [filter, setFilterValue] = useState("")
   
- 
 
   let nextId = todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1
 
@@ -88,9 +87,13 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center  p-24">
-       <h1 className="text-black text-2xl font-medium">TodoList with Filtering</h1>
+       <div className="header h-10 bg-black w-full flex items-center justify-center">
+          <Link href="/todo-api" className="text-white">Todo-Api</Link>
+       </div>
+      
      
-    <form onSubmit={handleAddData} className="space-x-5">
+    <form onSubmit={handleAddData} className="space-x-5 mt-10">
+    <h1 className="text-black text-2xl font-medium text-center">TodoList with Filtering</h1>
        <input onChange={handleOnChange1} value={inputValue.fname} type="text" className="border border-black" />
        <input onChange={handleOnChange2} value={inputValue.lname} type="text" className="border border-black" />
        <button className="text-black font-medium bg-green-500 py-1 px-2 rounded-full">ADD INFO</button>
@@ -121,7 +124,6 @@ export default function Home() {
          
        </div>
     
-
     </main>
   );
 }
@@ -142,9 +144,6 @@ export const Edit = ({names,  onEdit}:EditData) =>{
   const handleLnameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentValue({ ...currentValue, lname: e.target.value });
   };
-
-
-
 
     return (
       <>

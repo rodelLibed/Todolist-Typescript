@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "spiderman",
+      "views": 100
+    },
+    {
+      "id": 2,
+      "title": "harry potter"
+    },
+    {
+      "id": 3,
+      "title": "hello lab goodbye"
+    }
+  ]
+}
